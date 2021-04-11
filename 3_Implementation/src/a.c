@@ -48,8 +48,9 @@ Minheap* createminheap(int max_sizeofheap){
 
 Minheap *minheap=(Minheap*)malloc(sizeof(Minheap));
 
-minheap->max_size=max_sizeofheap;
+
 minheap->size=0;
+minheap->max_size=max_sizeofheap;
 minheap->array=(heapnode**)malloc(max_sizeofheap*sizeof(heapnode*));
 
 return minheap;
@@ -108,7 +109,7 @@ if(smallest_idx!=index){
 int checksizeone(Minheap *minheap)
 {
 
-    return (minheap->size==1);
+    return (minheap->size == 1);
 }
 
 //extract minimum node from minheap
@@ -145,33 +146,38 @@ minheap->array[j]=minheapnode;
 
 
 }
+
+
 void buildMinHeap(Minheap* minHeap)
- 
-{
+ {
  
     int n = minHeap->size - 1;
     int i;
  
     for (i = (n - 1) / 2; i >= 0; --i)
         heapify(minHeap, i);
+
+
+
 }
 
 void printarray(int arr[],int n)
 {
  int i=0;
- printf("\n");
+ 
  for(i=0; i<n;i++ ){
 
-     print("%d\n",arr[i]);
+     printf("%d",arr[i]);
  }
+ printf("\n");
 
 
 }
 
 
-void checkleafnode(heapnode *minheapnode){
+int checkleafnode(heapnode* minheapnode){
 
- return !minheapnode->left && !minheapnode->right;
+ return !(minheapnode->left) && !(minheapnode->right);
 
 }
 
@@ -196,7 +202,7 @@ minheap->size=size;
 
 buildMinHeap(minheap);
 
-
+return minheap;
 
 
 
@@ -218,7 +224,7 @@ Minheap* minheap=createandbuildminheap(c,freq,size);
 
 heapnode *top, *left, *right ;
 
-while(!checksizeone(minheap)){
+while(!(minheap->size==1)){
  
  left=popminnode(minheap);
  right=popminnode(minheap);
@@ -239,21 +245,49 @@ return popminnode(minheap);
 }
 
 
+void printhuffmancodes(heapnode* root,int ans[],int index){
+
+if(root->left){
+ans[index]=0;
+printhuffmancodes(root->left,ans,index+1);
+
+
+
+}
+
+if(root->right){
+ans[index]=1;
+printhuffmancodes(root->right,ans,index+1);
+
+
+
+}
+
+if(checkleafnode(root)){
+
+    printf("%c",root->c);
+
+    printarray(ans,index);
+
+
+
+}
+
+
+}
 
 
 
 
-void main(){
-
-heapnode a;
+void huffmancodes(char c[],int freq[], int size){
 
 
+    heapnode* root=huffmantree(c,freq,size);
 
+    int ans[100],index=0;
 
-
-
-
-
+    printhuffmancodes(root,ans,index);
+}
 
 
 
@@ -261,30 +295,19 @@ heapnode a;
 
 
 
+int main(){
 
+char arr[] = { 'a', 'b', 'c', 'd', 'e', 'f' };
+    int freq[] = { 5, 9, 12, 13, 16, 45 };
+ 
+    int size = sizeof(arr) / sizeof(arr[0]);
+    
+   huffmancodes(arr, freq, size);
+    
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  // printf("%d",createandbuildminheap(arr,freq,size));
+ 
+    return 0;
 
 
 
