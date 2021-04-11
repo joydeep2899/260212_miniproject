@@ -31,7 +31,7 @@ heapnode** array;
 } Minheap;
 
 
-Minheap* createnode(char ch, int frequency ){
+heapnode* createnode(char ch, int frequency ){
 
 
 heapnode *temp=(heapnode *)malloc(sizeof(heapnode));
@@ -111,6 +111,132 @@ int checksizeone(Minheap *minheap)
     return (minheap->size==1);
 }
 
+//extract minimum node from minheap
+heapnode* popminnode(Minheap *minheap){
+
+heapnode *temp=minheap->array[0];
+
+
+minheap->array[0]=minheap->array[minheap->size-1];
+--minheap->size;
+
+heapify(minheap,0);
+
+
+return temp;
+}
+
+
+void insertminheap(Minheap *minheap,heapnode *minheapnode){
+minheap->size++;
+int j=minheap->size-1;
+
+
+while(j && minheapnode->freq < minheap->array[(j-1)/2]->freq ){
+
+ minheap->array[j]=minheap->array[(j-1)/2];
+ j=(j-1)/2;
+
+
+}
+
+minheap->array[j]=minheapnode;
+
+
+
+}
+void buildMinHeap(Minheap* minHeap)
+ 
+{
+ 
+    int n = minHeap->size - 1;
+    int i;
+ 
+    for (i = (n - 1) / 2; i >= 0; --i)
+        heapify(minHeap, i);
+}
+
+void printarray(int arr[],int n)
+{
+ int i=0;
+ printf("\n");
+ for(i=0; i<n;i++ ){
+
+     print("%d\n",arr[i]);
+ }
+
+
+}
+
+
+void checkleafnode(heapnode *minheapnode){
+
+ return !minheapnode->left && !minheapnode->right;
+
+}
+
+
+
+
+Minheap* createandbuildminheap(char c[],int freq[] , int size) 
+{
+
+int i=0;
+
+Minheap *minheap= createminheap(size);
+
+for(i=0;i<size;i++){
+minheap->array[i]=createnode(c[i],freq[i]);
+
+
+}
+
+
+minheap->size=size;
+
+buildMinHeap(minheap);
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+heapnode* huffmantree(char c[],int freq[],int size ){
+
+Minheap* minheap=createandbuildminheap(c,freq,size);
+
+heapnode *top, *left, *right ;
+
+while(!checksizeone(minheap)){
+ 
+ left=popminnode(minheap);
+ right=popminnode(minheap);
+
+ top=createnode('$',left->freq+right->freq);
+ top->left=left;
+ top->right=right;
+
+ insertminheap(minheap,top);
+
+
+
+
+}
+
+return popminnode(minheap);
+
+}
 
 
 
