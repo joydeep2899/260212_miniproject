@@ -64,11 +64,10 @@ heapnode* t=*a;
 *a=*b;
 *b=t;
 
-
-
-
-
 }
+
+
+
 
 void heapify(Minheap *minheap,int index){
 
@@ -84,7 +83,7 @@ smallest_idx=left;
 
 
 }
-if(right<minheap->size&& minheap->array[right]->freq<minheap->array[smallest_idx]->freq){
+if(right<minheap->size && minheap->array[right]->freq<minheap->array[smallest_idx]->freq){
 
 smallest_idx=right;
 
@@ -92,22 +91,25 @@ smallest_idx=right;
 
 }
 
+
+
 if(smallest_idx!=index){
 
-
     heapnode_swap(&minheap->array[smallest_idx],&minheap->array[index]);
+
+    heapify(minheap,smallest_idx);
 }
 
 
 
-
-
-
-
-
 }
 
 
+int checksizeone(Minheap *minheap)
+{
+
+    return (minheap->size==1);
+}
 
 
 
