@@ -11,9 +11,9 @@
 #ifndef __HUFFMAN_H__
 #define __HUFFMAN_H__
 
-#include<stdio.h>
+#include <stdio.h>
 
-#include<stdlib.h>
+#include <stdlib.h>
 
 
 
