@@ -6,14 +6,13 @@ This project implements data compression using huffman coding . i have chosen th
 
 ## RESEARCH 
 
-<a src="https://www.dihuni.com/2020/04/10/every-day-big-data-statistics-2-5-quintillion-bytes-of-data-created-daily/"> Big Data Statistics </a>
+1 https://www.dihuni.com/2020/04/10/every-day-big-data-statistics-2-5-quintillion-bytes-of-data-created-daily/
 
-<a src="https://websitesetup.org/news/internet-facts-stats/">Websitesetup.org</a>
+2 https://websitesetup.org/news/internet-facts-stats 
 
-<a src="https://www.cisco.com/c/en/us/solutions/collateral/executive-perspectives/annual-internet-report/white-paper-c11-741490.html">Cisco Annual Report</a>
+3 https://www.cisco.com/c/en/us/solutions/collateral/executive-perspectives/annual-internet-report/white-paper-c11-741490.html
 
-<a src="https://www.statista.com/statistics/617136/digital-population-worldwide/">Statista.com Digital Population Report</a>
-
+4 https://www.statista.com/statistics/617136/digital-population-worldwide
 
 ## SWOT ANALYSIS 
 
