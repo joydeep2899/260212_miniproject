@@ -40,3 +40,11 @@ This project implements data compression using huffman coding . i have chosen th
          developers face this issue all the time while developing new chat applications . system designers face this issue while trying to scale the backend of their applications and while creating new system architectures which can support the increased data  from scaling up.
  ### HOW 
        since there has been an increase in the number of users of chat applications and people using text on their phones . this issue has been created as a result of the increased usage of chat applications 
+
+
+
+## HIGH LEVEL REQUIREMENTS 
+
+
+
+## LOW LEVEL REQUIREMENTS 
