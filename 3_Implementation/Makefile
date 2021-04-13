@@ -27,7 +27,7 @@ INCLUDE_LIBS = -lcunit
 PROJECT_OUTPUT = $(BUILD)/$(PROJECT_NAME)
 
 # Document files
-DOCUMENTATION_OUTPUT = documentation/html
+DOCUMENTATION_OUTPUT = documentation
 
 # Default target built
 $(PROJECT_NAME):all
@@ -43,8 +43,8 @@ run:$(PROJECT_NAME)
 	./$(PROJECT_OUTPUT).out
 
 # Document the code using Doxygen
-doc:
-	make -C ./documentation
+doc:$(DOCUMENTATION_OUTPUT)/doc
+	doxygen $(DOCUMENTATION_OUTPUT)/doc
 
 # Build and run the unit tests
 test:$(BUILD)
@@ -53,7 +53,7 @@ test:$(BUILD)
 
 # Remove all the built files, invoke by `make clean`
 clean:
-	rm -rf $(BUILD) $(DOCUMENTATION_OUTPUT)
+	rm -rf $(BUILD) $(DOCUMENTATION_OUTPUT)/html $(DOCUMENTATION_OUTPUT)/latex
 
 # Create new build folder if not present
 $(BUILD):
