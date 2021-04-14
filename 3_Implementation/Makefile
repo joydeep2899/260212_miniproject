@@ -7,7 +7,7 @@ BUILD = build
 
 ifdef OS
    RM = del 
-   FixPath = $(subst /,\,$1)
+   FixPath = .$(subst /,\,$1)
    EXEC = exe
 else
    ifeq ($(shell uname), Linux)
