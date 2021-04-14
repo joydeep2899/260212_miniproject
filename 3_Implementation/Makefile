@@ -85,8 +85,8 @@ test:$(BUILD)
 
 coverage:
 	cp test/test.c .
-	gcc -fprofile-arcs -ftest-coverage  $(INC)   $(TEST_SRC)-o $(call FixPath, $(TEST_OUTPUT).$(EXEC))
-	$(call FixPath, ./$(TEST_OUTPUT).$(EXEC))
+	gcc -fprofile-arcs -ftest-coverage  $(INC)   $(TEST_SRC)-o $(TEST_EXEC_PATH)
+	$(TEST_EXEC_PATH)
 	gcov -a $(COV_SRC)
 	$(RM) *.$(EXEC)
 	$(RM) *.gcda
