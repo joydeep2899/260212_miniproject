@@ -42,7 +42,7 @@ int main()
 
 /* Run Test functions */
   RUN_TEST(test_huffman_code);
-  
+
 
   /* Close the Unity Test Framework */
   return UNITY_END();
