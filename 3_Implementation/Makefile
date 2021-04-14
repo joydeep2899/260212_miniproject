@@ -85,7 +85,6 @@ coverage:
 	$(RM) *.gcda
 	$(RM) *.gcno
 	$(RM) *.c.gcov
-	$(RM) *.DAT
 	$(RM) test.c
 
 
