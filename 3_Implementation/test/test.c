@@ -7,8 +7,8 @@ void setUp (void) {} /* Is run before every test, put unit init calls here. */
 void tearDown (void) {} /* Is run before every test, put unit init calls here. */
 
 
- char arr[] = { 'a', 'b', 'c', 'd', 'e', 'f'  };
-  int freq[] = { 5, 9, 12, 13, 16, 45 };
+ char arr[] = { 'a', 'b', 'c', 'd', 'e', 'f','x'  };
+  int freq[] = { 5, 9, 12, 13, 16, 45 ,65};
   int size = sizeof(arr) / sizeof(arr[0]);
     
 

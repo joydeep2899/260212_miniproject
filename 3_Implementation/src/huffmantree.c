@@ -39,10 +39,10 @@ heapnode* huffmantree(char c[],int freq[],int size ){
     insertminheap(minheap,top);
 
 
-
+  
 
   }
-  free(top);
+ 
 
 return popminnode(minheap);
 
@@ -74,11 +74,11 @@ error_t printhuffmancodes(heapnode* root,int ans[],int index){
   } 
 
  if(checkleafnode(root))
-  {
+  { 
     printf("%c: ",root->c);
-
-    printarray(ans,index);
    
+    printarray(ans,index);
+    
 
 
   }
@@ -105,7 +105,7 @@ error_t huffmancodes(char c[],int freq[], int size){
 
 
     heapnode* root=huffmantree(c,freq,size);
-
+    // printf(" xx  %c xx",root->left->c);
     int ans[100],index=0;
 
    return printhuffmancodes(root,ans,index);
