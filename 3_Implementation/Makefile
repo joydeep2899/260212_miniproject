@@ -21,11 +21,13 @@ endif
 # All source code files
 SRC = main.c\
 src/huffmantree.c\
-src/huffman.c
+src/huffman.c\
+src/huffmanheap.c
 
 # All test source files
 TEST_SRC = src/huffman.c\
 src/huffmantree.c\
+src/huffmanheap.c\
 test/test.c\
 unity/unity.c\
 

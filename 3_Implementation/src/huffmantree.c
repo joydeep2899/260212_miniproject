@@ -1,6 +1,6 @@
 /**
  * @file huffmantree.c
- * @author joydeep ghosh (you@domain.com)
+ * @author joydeep ghosh 
  * @brief project to implement huffman coding 
  * @version 0.1
  * @date 2021-04-13
@@ -90,6 +90,8 @@ error_t printhuffmancodes(heapnode* root,int ans[],int index){
 }
 
 
+
+
 /**
  * @brief function to print huffman codes and intialise data structures;
  * 
@@ -98,8 +100,6 @@ error_t printhuffmancodes(heapnode* root,int ans[],int index){
  * @param size 
  * @return error_t 
  */
-
-
 
 error_t huffmancodes(char c[],int freq[], int size){
 
