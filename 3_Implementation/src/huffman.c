@@ -332,7 +332,7 @@ int status=0;
 
 
   }
-  if(status==1) 
+  if(ans[0]!=0) 
    return SUCCESS;
   else return FAILED; 
 
