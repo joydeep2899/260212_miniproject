@@ -20,10 +20,12 @@ endif
 
 # All source code files
 SRC = main.c\
+src/huffmantree.c\
 src/huffman.c
 
 # All test source files
 TEST_SRC = src/huffman.c\
+src/huffmantree.c\
 test/test.c\
 unity/unity.c\
 
@@ -60,6 +62,7 @@ $(PROJECT_NAME):all
 
 all: $(SRC) $(BUILD)
 	gcc $(SRC) $(INC) -o $(PROJECT_OUTPUT).$(EXEC)
+	./$(PROJECT_OUTPUT).$(EXEC)
 
 # Call `make run` to run the application
 run:$(PROJECT_NAME)
@@ -71,7 +74,7 @@ doc:$(DOCUMENTATION_OUTPUT)/doc
 
 # Build and run the unit tests
 test:$(BUILD)
-	gcc $(TEST_SRC) $(INC) -o $(TEST_OUTPUT) 
+	gcc $(TEST_SRC) $(INC) -o $(TEST_OUTPUT).$(EXEC)
 	./$(TEST_OUTPUT).$(EXEC)
 
 
