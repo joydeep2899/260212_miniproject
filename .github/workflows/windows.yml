@@ -11,7 +11,7 @@ jobs:
 
     runs-on: windows-latest
 
-  steps:
+    steps:
     - uses: actions/checkout@v2
     - name: make
       run: make -C 3_Implementation/ all
