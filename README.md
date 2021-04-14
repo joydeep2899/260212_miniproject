@@ -44,7 +44,7 @@ SF Id. |  Name   |    Features    | Issuess Raised |Issues Resolved|No Test Case
 |3| insert heapnodes  into minheap |
 |4| build huffman tree from minheap |
 |5| print huffman codes on terminal |
-|6| Before program shut down all memory is freed and clean |
+|6| after execution of program the dynamically allocated memory is freed |
 
 
 
