@@ -306,9 +306,9 @@ return popminnode(minheap);
  */
 
 error_t printhuffmancodes(heapnode* root,int ans[],int index){
-int status=0;
+
   if(root->left)
-   { status=0;
+   { 
     ans[index]=0;
     printhuffmancodes(root->left,ans,index+1);
 
@@ -317,7 +317,7 @@ int status=0;
     }
 
  if(root->right)
-  { status=0;
+  { 
    ans[index]=1;
    printhuffmancodes(root->right,ans,index+1);
 
@@ -328,7 +328,7 @@ int status=0;
     printf("%c: ",root->c);
 
     printarray(ans,index);
-   status=1;
+   
 
 
   }

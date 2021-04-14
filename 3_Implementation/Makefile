@@ -51,6 +51,19 @@ test:$(BUILD)
 	gcc $(TEST_SRC) $(INC) -o $(TEST_OUTPUT) 
 	./$(TEST_OUTPUT)
 
+
+
+debug:
+	gcc $(INC) $(SRC) -g -o ./$(PROJECT_OUTPUT).out
+	gdb  ./$(PROJECT_OUTPUT).out
+valgrind:
+	valgrind ./$(PROJECT_OUTPUT).out
+cppcheck:
+	cppcheck  $(SRC)  $(INC)  --enable=all --suppress=missingIncludeSystem 
+
+
+
+
 # Remove all the built files, invoke by `make clean`
 clean:
 	rm -rf $(BUILD) $(DOCUMENTATION_OUTPUT)/html $(DOCUMENTATION_OUTPUT)/latex

@@ -10,7 +10,7 @@ char arr[] = { 'a', 'b', 'c', 'd', 'e', 'f'  };
  
     int size = sizeof(arr) / sizeof(arr[0]);
     
-  int status=  huffmancodes(arr, freq, size);
+   huffmancodes(arr, freq, size);
     
 
   // printf("%d",createandbuildminheap(arr,freq,size));
