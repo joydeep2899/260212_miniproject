@@ -42,6 +42,7 @@ heapnode* huffmantree(char c[],int freq[],int size ){
 
 
   }
+  free(top);
 
 return popminnode(minheap);
 
