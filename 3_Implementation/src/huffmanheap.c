@@ -45,7 +45,7 @@ heapnode* popminnode(Minheap *minheap){
  * @param minheapnode 
  */
 
-void insertminheap(Minheap *minheap,heapnode *minheapnode)
+error_t insertminheap(Minheap *minheap,heapnode *minheapnode)
 {
  minheap->size++;
  int j=minheap->size-1;
@@ -62,7 +62,11 @@ void insertminheap(Minheap *minheap,heapnode *minheapnode)
 
  minheap->array[j]=minheapnode;
 
+ if(minheap->size>0){
 
+   return SUCCESS;
+ }
+ else return FAILED;
 
 }
 

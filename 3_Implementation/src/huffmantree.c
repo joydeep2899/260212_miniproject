@@ -105,7 +105,7 @@ error_t huffmancodes(char c[],int freq[], int size){
 
 
     heapnode* root=huffmantree(c,freq,size);
-    // printf(" xx  %c xx",root->left->c);
+    
     int ans[100],index=0;
 
    return printhuffmancodes(root,ans,index);

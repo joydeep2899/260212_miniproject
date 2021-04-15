@@ -124,7 +124,7 @@ heapnode* popminnode(Minheap *minheap);
  */
 
 
-void insertminheap(Minheap *minheap,heapnode *minheapnode);
+error_t insertminheap(Minheap *minheap,heapnode *minheapnode);
 
 /**
  * @brief function to build minheap
